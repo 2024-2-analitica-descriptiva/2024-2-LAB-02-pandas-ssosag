@@ -21,3 +21,9 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    return tabla0["c1"].value_counts().sort_index()

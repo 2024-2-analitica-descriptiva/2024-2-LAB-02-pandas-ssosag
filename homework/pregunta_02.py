@@ -14,3 +14,12 @@ def pregunta_02():
     4
 
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    return tabla0.shape[1]
+
+
+print(pregunta_02())

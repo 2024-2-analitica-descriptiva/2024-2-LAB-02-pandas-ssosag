@@ -22,3 +22,11 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    tabla0["suma"] = tabla0["c0"] + tabla0["c2"]
+    return tabla0

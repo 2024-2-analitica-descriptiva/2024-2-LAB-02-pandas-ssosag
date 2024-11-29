@@ -15,3 +15,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla1 = loadData("tbl1.tsv")
+
+    return sorted(tabla1["c4"].str.upper().unique().tolist())

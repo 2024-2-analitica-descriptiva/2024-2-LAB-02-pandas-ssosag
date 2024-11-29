@@ -20,3 +20,16 @@ def pregunta_13():
     E    275
     Name: c5b, dtype: int64
     """
+
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+    tabla2 = loadData("tbl2.tsv")
+
+    merge = pd.merge(tabla0, tabla2, on="c0")
+    print(merge)
+    return merge.groupby("c1")["c5b"].sum()
+
+
+print(pregunta_13())

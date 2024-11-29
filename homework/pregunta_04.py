@@ -20,3 +20,9 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    return tabla0.groupby("c1")["c2"].mean()

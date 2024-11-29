@@ -23,3 +23,11 @@ def pregunta_09():
     39  39  E   5  1998-01-26  1998
 
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    tabla0["year"] = tabla0["c3"].str.split("-").str[0]
+
+    return tabla0

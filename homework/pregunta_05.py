@@ -20,3 +20,9 @@ def pregunta_05():
     E    9
     Name: c2, dtype: int64
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla0 = loadData("tbl0.tsv")
+
+    return tabla0.groupby("c1")["c2"].max()

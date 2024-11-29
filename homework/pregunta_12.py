@@ -22,3 +22,17 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+    import pandas as pd
+    from homework.loadData import loadData
+
+    tabla2 = loadData("tbl2.tsv")
+
+    tabla2 = tabla2.sort_values(by=["c5a"])
+
+    tabla2["c5"] = tabla2["c5a"] + ":" + tabla2["c5b"].astype(str)
+
+    resultado = tabla2.groupby("c0")["c5"].apply(lambda x: ",".join(x)).reset_index()
+    return resultado
+
+
+print(pregunta_12())
